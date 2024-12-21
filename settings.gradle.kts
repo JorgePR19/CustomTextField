@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "LibraryCustomTextField"
 include(":app")
- 
+include(":customtextfield")

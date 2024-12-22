@@ -1,16 +1,17 @@
-package com.example.customtextfield.themes.styles
-/*
+package com.example.customtextfield.ui.ui.theme
+
 import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import com.example.customtextfield.R
-import com.example.customtextfield.themes.dimens.DimensSp.Sp14
-import com.example.customtextfield.themes.dimens.DimensSp.Sp16
-import com.example.customtextfield.themes.dimens.DimensSp.Sp24
+import com.example.customtextfield.ui.ui.theme.dimens.DimensSp.Sp10
+import com.example.customtextfield.ui.ui.theme.dimens.DimensSp.Sp14
+import com.example.customtextfield.ui.ui.theme.dimens.DimensSp.Sp16
+import com.example.customtextfield.ui.ui.theme.dimens.DimensSp.Sp24
 
-object Fonts {
+object Styles {
     private val robotoFontFamily = FontFamily(
         Font(R.font.roboto_regular, FontWeight.Normal),
         Font(R.font.roboto_bold, FontWeight.Bold),
@@ -25,8 +26,8 @@ object Fonts {
         fontFamily = robotoFontFamily,
         fontWeight = FontWeight.Medium,
     )
-    var roboto14Medium = TextStyle(
-        fontSize = Sp14,
+    var roboto10Medium = TextStyle(
+        fontSize = Sp10,
         lineHeight = Sp16,
         fontFamily = robotoFontFamily,
         fontWeight = FontWeight.Medium,
@@ -46,4 +47,4 @@ object Fonts {
         lineHeight = Sp16
     )
 
-}*/
+}

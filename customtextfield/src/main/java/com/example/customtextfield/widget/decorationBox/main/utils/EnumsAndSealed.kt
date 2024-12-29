@@ -1,4 +1,4 @@
-package com.example.customtextfield.widget.decorationBox.core
+package com.example.customtextfield.widget.decorationBox.main.utils
 
 enum class TextFieldStatus {
     ENABLE, DISABLE, ERROR, EDITING, SUCCESS, WARNING

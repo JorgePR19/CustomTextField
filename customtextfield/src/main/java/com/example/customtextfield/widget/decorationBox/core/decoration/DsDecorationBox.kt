@@ -7,6 +7,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -33,14 +34,17 @@ import com.example.customtextfield.ui.ui.theme.dimens.DimensDp.Dp46
 import com.example.customtextfield.ui.ui.theme.dimens.DimensDp.Dp50
 import com.example.customtextfield.ui.ui.theme.dimens.DimensDp.Dp60
 import com.example.customtextfield.ui.ui.theme.dimens.DimensDp.Dp8
-import com.example.customtextfield.widget.decorationBox.core.TextFieldStatus
+import com.example.customtextfield.widget.decorationBox.main.utils.TextFieldStatus
+import org.jetbrains.annotations.ApiStatus.Internal
 
+@Internal
 @Composable
 fun DsDecorationBox(
     innerTextField: @Composable () -> Unit,
     value: String,
     placeholder: String = "",
-    @DrawableRes icon: Int? = null,
+    @DrawableRes startIcon: Int? = null,
+    @DrawableRes endIcon: Int? = null,
     endIconAction: (() -> Unit)? = null,
     focusState: Boolean,
     textFieldStatus: TextFieldStatus,
@@ -74,33 +78,50 @@ fun DsDecorationBox(
                     start.linkTo(parent.start)
                 }
             ) {
-                Column(
-                    modifier = Modifier
-                        .fillMaxHeight()
-                        .fillMaxWidth()
-                        .padding(start = Dp60, end = Dp8, top = Dp2, bottom = Dp2),
-                    verticalArrangement = Arrangement.Center
+                Row(
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(end = Dp8)
                 ) {
-                    if (label.isNotEmpty()) Text(
-                        label,
-                        style = setLabelStyle(focusState, placeholder, value, textFieldStatus)
-                    )
-                    if (focusState || value.isNotEmpty() || placeholder.isNotEmpty()) {
-                        if (value.isEmpty() && placeholder.isNotEmpty()) {
-                            Text(
-                                text = placeholder,
-                                style = getPlaceHolderStyle(textFieldStatus)
-                            )
-                        } else {
-                            Spacer(modifier = Modifier.weight(1f))
-                            Box(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(end = Dp8)
-                            ) {
-                                innerTextField()
+                    Column(
+                        modifier = Modifier
+                            .fillMaxHeight()
+                            .weight(1f)
+                            .padding(start = Dp60, top = Dp2, bottom = Dp2),
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        if (label.isNotEmpty()) Text(
+                            label,
+                            style = setLabelStyle(focusState, placeholder, value, textFieldStatus)
+                        )
+                        if (focusState || value.isNotEmpty() || placeholder.isNotEmpty()) {
+                            if (value.isEmpty() && placeholder.isNotEmpty()) {
+                                Text(
+                                    text = placeholder,
+                                    style = getPlaceHolderStyle(textFieldStatus)
+                                )
+                            } else {
+                                Spacer(modifier = Modifier.weight(1f))
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(end = Dp8)
+                                ) {
+                                    innerTextField()
+                                }
+                                Spacer(modifier = Modifier.weight(1f))
                             }
-                            Spacer(modifier = Modifier.weight(1f))
+                        }
+                    }
+
+                    if (endIcon != null) {
+                        IconButton(onClick = {
+                            if (endIconAction != null) endIconAction()
+                        }, modifier = Modifier.size(24.dp)) {
+                            Image(
+                                painter = painterResource(endIcon),
+                                contentDescription = "",
+                            )
                         }
                     }
                 }
@@ -122,15 +143,11 @@ fun DsDecorationBox(
                         start.linkTo(parent.start)
                     }, contentAlignment = Alignment.Center
             ) {
-
-                IconButton(onClick = {
-                    if (endIconAction != null) endIconAction()
-                }, modifier = Modifier.size(24.dp)) {
-                    Image(
-                        painter = painterResource(icon ?: R.drawable.default_icon),
-                        contentDescription = "",
-                    )
-                }
+                Image(
+                    painter = painterResource(startIcon ?: R.drawable.default_icon),
+                    contentDescription = "",
+                    modifier = Modifier.size(24.dp)
+                )
             }
         }
     }

@@ -10,7 +10,9 @@ import com.example.customtextfield.ui.ui.theme.dimens.DimensSp.Sp10
 import com.example.customtextfield.ui.ui.theme.dimens.DimensSp.Sp14
 import com.example.customtextfield.ui.ui.theme.dimens.DimensSp.Sp16
 import com.example.customtextfield.ui.ui.theme.dimens.DimensSp.Sp24
+import org.jetbrains.annotations.ApiStatus.Internal
 
+@Internal
 object Styles {
     private val robotoFontFamily = FontFamily(
         Font(R.font.roboto_regular, FontWeight.Normal),

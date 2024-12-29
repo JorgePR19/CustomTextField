@@ -1,12 +1,12 @@
 package com.example.customtextfield.widget.decorationBox.main.utils
 
-import com.example.customtextfield.widget.decorationBox.core.TextFieldStatus
 import com.example.customtextfield.widget.decorationBox.main.model.DsTypesIcons
+import org.jetbrains.annotations.ApiStatus.Internal
 import java.math.RoundingMode.DOWN
 import java.text.DecimalFormat
 import java.util.Locale
 
-
+@Internal
 fun Double.formatMoney(): String {
     val format = DecimalFormat.getCurrencyInstance(Locale.forLanguageTag("es-MX"))
     format.minimumFractionDigits = 0
@@ -14,6 +14,7 @@ fun Double.formatMoney(): String {
     return format.format(this).trim()
 }
 
+@Internal
 fun getIconByStatus(textFieldStatus: TextFieldStatus, dsTypesIcons: DsTypesIcons): Int? {
     return when(textFieldStatus){
         TextFieldStatus.ERROR -> dsTypesIcons.errorIcon

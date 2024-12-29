@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
 import com.example.customtextfield.R
-import com.example.customtextfield.widget.decorationBox.core.DsKayBoardActions
+import com.example.customtextfield.widget.decorationBox.main.utils.DsKayBoardActions
 import com.example.customtextfield.widget.decorationBox.core.textfield.DSBaseTextField
 import com.example.customtextfield.widget.decorationBox.main.model.DsInputModel
 import com.example.customtextfield.widget.decorationBox.main.utils.PasswordTransformation
@@ -57,7 +57,8 @@ fun DsPasswordTextField(
             onFocusChange(state)
         },
         placeholder = dsInputModel.placeHolder,
-        icon = if (!showPass) R.drawable.eye_visible_icon else R.drawable.eye_invisible_icon,
+        startIcon = dsInputModel.dsTypesIcons.startIcon,
+        endIcon = if (!showPass) R.drawable.eye_visible_icon else R.drawable.eye_invisible_icon,
         endIconAction = {
             showPass = !showPass
         },

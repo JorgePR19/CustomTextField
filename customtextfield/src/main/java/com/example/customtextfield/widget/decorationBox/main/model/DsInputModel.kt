@@ -3,8 +3,8 @@ package com.example.customtextfield.widget.decorationBox.main.model
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
-import com.example.customtextfield.widget.decorationBox.core.DsInputType
-import com.example.customtextfield.widget.decorationBox.core.TextFieldStatus
+import com.example.customtextfield.widget.decorationBox.main.utils.DsInputType
+import com.example.customtextfield.widget.decorationBox.main.utils.TextFieldStatus
 
 
 data class DsInputModel(
@@ -30,6 +30,7 @@ data class DsInputProperties(
 )
 
 data class DsTypesIcons(
+    val startIcon: Int? = null,
     val endIcon: Int? = null,
     val successIcon: Int? = null,
     val errorIcon: Int? = null,

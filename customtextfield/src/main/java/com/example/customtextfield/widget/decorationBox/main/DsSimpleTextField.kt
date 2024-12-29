@@ -5,9 +5,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
-import com.example.customtextfield.widget.decorationBox.core.DsKayBoardActions
+import com.example.customtextfield.R.drawable.*
 import com.example.customtextfield.widget.decorationBox.core.textfield.DSBaseTextField
 import com.example.customtextfield.widget.decorationBox.main.model.DsInputModel
+import com.example.customtextfield.widget.decorationBox.main.utils.DsKayBoardActions
 import com.example.customtextfield.widget.decorationBox.main.utils.getIconByStatus
 
 
@@ -40,7 +41,8 @@ fun DsSimpleTextField(
             onFocusChange(state)
         },
         placeholder = dsInputModel.placeHolder,
-        icon = getIconByStatus(dsInputModel.textFieldStatus, dsInputModel.dsTypesIcons),
+        startIcon = dsInputModel.dsTypesIcons.startIcon,
+        endIcon = getIconByStatus(dsInputModel.textFieldStatus, dsInputModel.dsTypesIcons),
         endIconAction = endIconAction,
         textFieldStatus = dsInputModel.textFieldStatus,
         keyboardOptions = KeyboardOptions(

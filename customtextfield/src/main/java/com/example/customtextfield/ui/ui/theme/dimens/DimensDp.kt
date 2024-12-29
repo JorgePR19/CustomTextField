@@ -1,7 +1,9 @@
 package com.example.customtextfield.ui.ui.theme.dimens
 
 import androidx.compose.ui.unit.dp
+import org.jetbrains.annotations.ApiStatus.Internal
 
+@Internal
 object DimensDp {
     val Dp48 = 48.dp
     val Dp8 = 8.dp

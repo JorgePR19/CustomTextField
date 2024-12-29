@@ -5,7 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.TextFieldValue
-import com.example.customtextfield.widget.decorationBox.core.DsKayBoardActions
+import com.example.customtextfield.widget.decorationBox.main.utils.DsKayBoardActions
 import com.example.customtextfield.widget.decorationBox.core.textfield.DSBaseTextField
 import com.example.customtextfield.widget.decorationBox.main.model.DsInputModel
 import com.example.customtextfield.widget.decorationBox.main.utils.formatMoney
@@ -66,7 +66,8 @@ fun DsMoneyTextFieldWhitOutDecimal(
         },
         modifier = modifier,
         helperText = dsInputModel.helperText,
-        icon = getIconByStatus(dsInputModel.textFieldStatus, dsInputModel.dsTypesIcons),
+        startIcon = dsInputModel.dsTypesIcons.startIcon,
+        endIcon = getIconByStatus(dsInputModel.textFieldStatus, dsInputModel.dsTypesIcons),
         maxLength = dsInputModel.properties.maxLength,
         countLength = dsInputModel.properties.countLength
     )

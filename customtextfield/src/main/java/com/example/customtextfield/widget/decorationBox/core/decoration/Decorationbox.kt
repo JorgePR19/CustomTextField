@@ -19,7 +19,8 @@ import com.example.customtextfield.ui.ui.theme.red800Color
 import com.example.customtextfield.ui.ui.theme.red800ColorBox
 import com.example.customtextfield.ui.ui.theme.yellow500Color
 import com.example.customtextfield.ui.ui.theme.yellow500ColorBox
-import com.example.customtextfield.widget.decorationBox.core.TextFieldStatus
+import com.example.customtextfield.widget.decorationBox.main.utils.TextFieldStatus
+import org.jetbrains.annotations.ApiStatus.Internal
 
 private fun labelUnnFocus(texColor: Color) = roboto16Medium.copy(color = texColor)
 
@@ -35,6 +36,7 @@ private fun setLabelStyleStatus(placeholder: String, value: String, texColor: Co
     }
 }
 
+@Internal
 fun setLabelStyle(
     focusState: Boolean,
     placeholder: String,
@@ -87,6 +89,7 @@ fun setLabelStyle(
     }
 }
 
+@Internal
 fun getUnderLine(focusState: Boolean, textFieldStatus: TextFieldStatus): Color {
     return when (focusState) {
         true -> {
@@ -110,6 +113,7 @@ fun getUnderLine(focusState: Boolean, textFieldStatus: TextFieldStatus): Color {
     }
 }
 
+@Internal
 fun getUnderLineBox(focusState: Boolean, textFieldStatus: TextFieldStatus): Color {
     return when (focusState) {
         true -> {
@@ -133,6 +137,7 @@ fun getUnderLineBox(focusState: Boolean, textFieldStatus: TextFieldStatus): Colo
     }
 }
 
+@Internal
 fun getUnderLineHeight(
     focusState: Boolean,
     placeholder: String,
@@ -152,6 +157,8 @@ fun getUnderLineHeight(
         }
     }
 }
+
+@Internal
 fun getUnderLineHeightBox(
     focusState: Boolean,
     placeholder: String,
@@ -171,6 +178,8 @@ fun getUnderLineHeightBox(
         }
     }
 }
+
+@Internal
 fun getPlaceHolderStyle(textFieldStatus: TextFieldStatus): TextStyle {
     return when (textFieldStatus) {
         TextFieldStatus.DISABLE -> placeHolderStyle(gray800Color)

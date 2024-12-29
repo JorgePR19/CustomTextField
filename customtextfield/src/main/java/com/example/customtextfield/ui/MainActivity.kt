@@ -22,7 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.customtextfield.R
 import com.example.customtextfield.ui.ui.theme.LibraryCustomTextFieldTheme
-import com.example.customtextfield.widget.decorationBox.core.TextFieldStatus
+import com.example.customtextfield.widget.decorationBox.main.utils.TextFieldStatus
 import com.example.customtextfield.widget.decorationBox.main.DsMoneyTextFieldWhitOutDecimal
 import com.example.customtextfield.widget.decorationBox.main.DsPasswordTextField
 import com.example.customtextfield.widget.decorationBox.main.DsSimpleTextField

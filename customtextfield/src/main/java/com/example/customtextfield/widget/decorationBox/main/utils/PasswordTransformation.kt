@@ -5,8 +5,10 @@ import androidx.compose.ui.text.input.OffsetMapping
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TransformedText
 import androidx.compose.ui.text.input.VisualTransformation
+import org.jetbrains.annotations.ApiStatus.Internal
 
 
+@Internal
 class PasswordTransformation(val mask: Char ='●') : VisualTransformation {
     override fun filter(text: AnnotatedString): TransformedText {
         return TransformedText(

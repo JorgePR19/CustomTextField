@@ -8,10 +8,12 @@ import com.example.customtextfield.ui.ui.theme.gray800Color
 import com.example.customtextfield.ui.ui.theme.green500Color
 import com.example.customtextfield.ui.ui.theme.red800Color
 import com.example.customtextfield.ui.ui.theme.yellow500Color
-import com.example.customtextfield.widget.decorationBox.core.TextFieldStatus
+import com.example.customtextfield.widget.decorationBox.main.utils.TextFieldStatus
+import org.jetbrains.annotations.ApiStatus.Internal
 
 private fun getHelperTextStyle(texColor: Color) = roboto14Regular.copy(color = texColor)
 
+@Internal
 @Composable
 fun getStyle(textFieldStatus: TextFieldStatus): TextStyle {
     return when (textFieldStatus) {
